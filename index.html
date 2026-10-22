@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffd5e7">
+  <title>PinkPetal — Survei Statistika</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="float f1">♡</span><span class="float f2">✿</span>
+    <span class="float f3">♡</span><span class="float f4">✧</span>
+    <span class="float f5">✿</span><span class="float f6">♡</span>
+    <span class="float f7">✧</span><span class="float f8">♡</span>
+  </div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="PinkPetal beranda"><span class="brand-mark">✿</span> PinkPetal</a>
+    <span class="top-note">SURVEI STATISTIKA · 2026</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="sparkle">✦</span> STUDENT DATA PROJECT <span class="sparkle">✦</span></div>
+      <h1>Hai, <span>teman!</span></h1>
+      <p class="hero-copy">Bantu kami mengumpulkan data untuk tugas Statistika. Isi dengan teliti dan jujur, ya ♡</p>
+      <div class="hero-tags"><span>♡ Cute & simple</span><span>✧ ± 5–10 menit*</span><span>🌷 Usia 17–24 tahun</span></div>
+      <p class="tiny-note">*Perkiraan waktu berubah sesuai jumlah item kuesioner.</p>
+    </section>
+
+    <section class="notice">
+      <span class="notice-icon">♡</span>
+      <div><strong>Sebelum mulai</strong><p>Partisipasi bersifat sukarela. Jawaban digunakan untuk tugas kuliah dan hanya dapat diakses oleh tim yang mengelola data. Jangan masukkan nama lengkap atau informasi identitas yang tidak diperlukan. Kamu dapat berhenti sebelum mengirim.</p></div>
+    </section>
+
+    <form id="surveyForm" novalidate>
+      <section class="panel">
+        <div class="section-heading"><span class="step">01</span><div><h2>Kenalan dulu</h2><p>Informasi dasar responden</p></div></div>
+        <div class="grid two">
+          <label>Kode responden <span class="required">*</span><input name="respondentCode" required maxlength="12" placeholder="Contoh: R001" autocomplete="off"></label>
+          <label>Usia (tahun) <span class="required">*</span><input name="age" type="number" min="17" max="24" step="1" required placeholder="17–24"></label>
+          <label>Universitas <span class="required">*</span><input name="university" required maxlength="100" placeholder="Nama universitas"></label>
+          <label>Fakultas <span class="required">*</span><input name="faculty" required maxlength="100" placeholder="Nama fakultas"></label>
+          <label>Jurusan / program studi <span class="required">*</span><input name="major" required maxlength="100" placeholder="Nama program studi"></label>
+          <label>Jenis kelamin <span class="required">*</span><select name="gender" required><option value="">Pilih jawaban</option><option>Perempuan</option><option>Laki-laki</option><option>Memilih tidak menjawab</option><option>Lainnya</option></select></label>
+          <label>Golongan darah <span class="required">*</span><select name="bloodType" required><option value="">Pilih jawaban</option><option>A</option><option>B</option><option>AB</option><option>O</option><option>Tidak tahu</option></select></label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><span class="step">02</span><div><h2>Kebiasaan sehari-hari</h2><p>Masukkan angka dan gunakan satuan yang diminta</p></div></div>
+        <div class="grid two">
+          <label>Tinggi badan (cm) <span class="required">*</span><input name="heightCm" type="number" min="50" max="250" step="0.1" required placeholder="Contoh: 160"></label>
+          <label>Berat badan (kg) <span class="required">*</span><input name="weightKg" type="number" min="10" max="350" step="0.1" required placeholder="Contoh: 52"></label>
+          <label>Durasi tidur (jam per hari) <span class="required">*</span><input name="sleepHours" type="number" min="0" max="24" step="0.25" required placeholder="Contoh: 7"></label>
+          <label>Durasi olahraga (jam per minggu) <span class="required">*</span><input name="exerciseHoursWeek" type="number" min="0" max="168" step="0.25" required placeholder="Contoh: 3"></label>
+          <label class="full">Durasi penggunaan media sosial (jam per hari) <span class="required">*</span><input name="socialMediaHoursDay" type="number" min="0" max="24" step="0.25" required placeholder="Contoh: 5"></label>
+        </div>
+        <p class="field-hint">Gunakan angka perkiraan yang paling sesuai. Jika satuan atau definisi di instruksi dosen berbeda, ubah pertanyaan sebelum survei dibagikan.</p>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><span class="step">03</span><div><h2>Kuesioner tambahan</h2><p>Bagian ini perlu disesuaikan dengan lampiran resmi dosen</p></div></div>
+        <div class="instrument-alert"><strong>⚠ Jangan bagikan formulir sebelum item diverifikasi.</strong><p>Instruksi tugas yang terlihat menyebut DASS21 tetapi tampaknya mencantumkan 42 item. Agar tidak mengarang atau mengubah instrumen, 42 pernyataan tidak disertakan di sini. Tempel redaksi resmi yang diizinkan dosen ke konfigurasi JavaScript setelah memastikan instrumen, pilihan jawaban, periode waktu, dan skoringnya benar.</p></div>
+        <div id="dassContainer"></div>
+        <p class="field-hint">Jika belum ada item resmi yang dimasukkan, formulir ini tidak dapat dikirim. Jangan mengganti item dengan pertanyaan buatan sendiri.</p>
+      </section>
+
+      <section class="panel consent-panel">
+        <label class="consent"><input type="checkbox" name="consent" required><span>Saya berusia 17–24 tahun, memahami keterangan di atas, dan bersedia berpartisipasi secara sukarela. <span class="required">*</span></span></label>
+      </section>
+
+      <div class="submit-area">
+        <button type="submit" id="submitBtn" class="submit-btn"><span>Kirim jawaban</span><span aria-hidden="true">♡</span></button>
+        <p id="status" class="status" role="status" aria-live="polite">Pastikan jawaban sudah benar sebelum mengirim.</p>
+        <p class="privacy-foot">Jangan kirim informasi medis atau identitas pribadi di luar yang diminta. Data survei bukan diagnosis klinis.</p>
+      </div>
+    </form>
+    <footer>Made with ♡ for a statistics class · PinkPetal Survey</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
